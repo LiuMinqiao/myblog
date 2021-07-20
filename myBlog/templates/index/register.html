@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+                {%  load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>register</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static "css/1.css" %}">
+<link rel="shortcut icon" href="{% static "icon/favicon.ico"%}">
+    <!-- Custom styles for this template -->
+    <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.10/examples/signin/signin.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.10/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h1><span class="ahref">{{message}}</span></h1>
+ <div class="container">
+
+
+      <form class="form-signin" action="RegisterUser" method="post">{% csrf_token %}
+
+
+
+
+        <label for="userName" class="sr-only">UserName</label>
+        <span >用户名</span>
+          <input type="text" id="userName" style="display: inline-block" class="form-control" placeholder="UserName" name="username" required autofocus> {% csrf_token %}
+          <span id="#nameTips"></span>
+          <p></p>
+        <label for="Age" class="sr-only">Age</label>
+          <span >年龄</span>
+        <input type="text" id="Age" class="form-control" placeholder="Age" name="age" required autofocus>
+          <p></p>
+        <span >邮箱</span>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
+          <span id="#emailTips"></span>
+            <p></p>
+        <label for="inputPassword" class="sr-only">Password</label>
+          <span>密码</span>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="pwd" required>
+
+             <div style="width: auto;height: 10px">&nbsp; </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">register it</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+
+<script src="{% static "js/registerUser.js" %}"></script>
+
+</body>
+</html>

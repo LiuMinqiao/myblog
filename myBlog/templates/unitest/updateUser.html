@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+         {%  load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>updateUser</title>
+
+    <link rel="shortcut icon" href="{% static "icon/favicon.ico"%}">
+</head>
+<body>
+
+<form action="../updatedUser" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" value="{{user.name}}" required/>
+    <input type="email" name="email" value="{{user.email}}" required/>
+    <input type="text" name="memo" value="{{user.memo}}"/>
+    <input type="hidden" name="id" value="{{user.id}}"/>
+
+    <input type="submit" value="修改"/>
+</form>
+
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>邮箱</th>
+            <th>介绍</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for line in user_list %}
+                <tr>
+                    <td>{{ line.name }}</td>
+                    <td>{{ line.email }}</td>
+                    <td>{{ line.memo }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

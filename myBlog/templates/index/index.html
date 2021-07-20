@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+        {%  load staticfiles %}
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>index</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static "css/1.css" %}">
+<link rel="shortcut icon" href="{% static "icon/favicon.ico"%}">
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+
+<!--<script src="/scripts/bootstrap.min.js"></script>-->
+</head>
+<body>
+<h2 style="float: right;margin-right: 20px">
+    {% if not request.session.haslogin %}
+        <a class="ahref" href="toLogin">Login | {{request.session.haslogin}} |hello</a>
+    {% else %}
+
+<!-- Split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-info">
+      <a class="ahref" style="color: #fff"  href="#">{{request.session.name}}</a>
+  </button>
+  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">个人中心</a></li>
+    <li role="separator" class="divider"></li>
+     <li><a href="Logout">Logout</a></li>
+  </ul>
+</div>
+    {% endif %}
+</h2>
+<br />
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+
+<table class="table table-bordered" style="border: 0px; table-layout: fixed;height: 400px;width: 420px;text-align: center; margin: 100px auto 3px auto">
+ <tr>
+    <td>
+        <a href="http://www.baidu.com" target="-blank" title="源码家园">
+    <img src="{% static "images/1.jpg" %}" class="favIcons">
+</a>
+    </td>
+    <td>        <a href="http://www.baidu.com" target="-blank" title="源码家园">
+    <img src="{% static "images/1.jpg" %}" class="favIcons">
+</a></td>
+    <td>        <a href="http://www.baidu.com" target="-blank" title="源码家园">
+    <img src="{% static "images/1.jpg" %}" class="favIcons">
+</a></td>
+  </tr>
+  <tr>
+    <td>        <a href="http://www.baidu.com" target="-blank" title="源码家园">
+    <img src="{% static "images/1.jpg" %}" class="favIcons">
+</a></td>
+    <td>        <a href="http://www.baidu.com" target="-blank" title="源码家园">
+    <img src="{% static "images/1.jpg" %}" class="favIcons">
+</a></td>
+    <td>        <a href="http://www.baidu.com" target="-blank" title="源码家园">
+    <img src="{% static "images/1.jpg" %}" class="favIcons">
+</a></td>
+  </tr>
+   <tr>
+    <td>        <a href="http://www.baidu.com" target="-blank" title="源码家园">
+    <img src="{% static "images/1.jpg" %}" class="favIcons">
+</a></td>
+    <td>        <a href="http://www.baidu.com" target="-blank" title="源码家园">
+    <img src="{% static "images/1.jpg" %}" class="favIcons">
+</a></td>
+    <td>        <a href="http://www.baidu.com" target="-blank" title="源码家园">
+    <img src="{% static "images/1.jpg" %}" class="favIcons">
+</a></td>
+  </tr>
+</table>
+
+<style>
+
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+
+    vertical-align: middle;
+
+
+
+}
+.table-bordered > tbody{
+    border: #ffffff 0px solid;
+}
+
+.table-bordered > tbody > tr > td
+{
+    border: #ffffff 0px;
+}
+
+
+</style>
+
+</body>
+</html>

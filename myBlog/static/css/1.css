@@ -1,0 +1,21 @@
+.ahref:link {
+    text-decoration: none;
+    color: #328bff;
+}
+
+
+
+.ahref:visited{
+    text-decoration: none;
+    color: #ff5e46;
+}
+.ahref:hover {
+    text-decoration: none;
+    color: #1727ff;
+}
+
+.favIcons{
+    margin: 0;
+    padding: 0;
+    border-radius: 60px;
+}

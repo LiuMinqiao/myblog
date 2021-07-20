@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+         {%  load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>addUser</title>
+
+
+    <link rel="shortcut icon" href="{% static "icon/favicon.ico"%}">
+</head>
+<body>
+
+<form action="addUser" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" required/>
+    <input type="email" name="email" required/>
+    <input type="text" name="memo"/>
+
+    <input type="submit" value="增加"/>
+</form>
+
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>邮箱</th>
+            <th>介绍</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for line in user_list %}
+                <tr>
+                    <td>{{ line.name }}</td>
+                    <td>{{ line.email }}</td>
+                    <td>{{ line.memo }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

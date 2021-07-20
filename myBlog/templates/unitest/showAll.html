@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+         {%  load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>showAll</title>
+
+
+    <link rel="shortcut icon" href="{% static "icon/favicon.ico"%}">
+</head>
+<body>
+
+<h1><a href="toaddUser">增添用户</a></h1>
+
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>邮箱</th>
+            <th>介绍</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for line in user_list %}
+                <tr>
+                    <td>{{ line.name }}</td>
+                    <td>{{ line.email }}</td>
+                    <td>{{ line.memo }}</td>
+                    <td> <a href="deleteUser/{{line.id}}" >删除</a> | <a href="updateUser/{{line.id}}" >修改</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
