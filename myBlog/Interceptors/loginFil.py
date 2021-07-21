@@ -9,7 +9,8 @@ except ImportError:
 class SimpleMiddleware(MiddlewareMixin):
     def __init__(self, get_response=None):
         self.get_response = get_response
-        self.safeList = ['/index/toLogin','/index/logined','/index/','/index/registerIt','/index/RegisterUser','/index/checkRegister']
+        # self.safeList = ['/index/toLogin','/index/logined','/index/','/index/registerIt','/index/RegisterUser','/index/checkRegister']
+        self.safeList = ['/','/index/toLogin','/index/logined','/index/','/index/registerIt','/index/RegisterUser','/index/checkRegister']
     def process_request(self, request):
         print(request.get_full_path())
         print(request.path)
